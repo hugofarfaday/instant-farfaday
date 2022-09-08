@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from '../Card/Card';
 import Background from '../Background/Background';
+import "./HomeScreen.css";
 
 export default class HomeScreen extends Component {
   render() {
@@ -27,7 +28,9 @@ export default class HomeScreen extends Component {
         { id: "17", title: "The Outlast Trials", prix: "55", pricebare: "63.99",  image: "./assets/images/outlast.jpg" },
         { id: "18", title: "Skull and Bones", prix: "40", pricebare: "55.99", image: "./assets/images/skull.jpg" },
         { id: "19", title: "The Lord of the Rings : Gollum", prix: "19", pricebare: "35.99", image: "./assets/images/gollum.webp" },
-        { id: "20", title: "S.T.A.L.K.E.R. 2 : Heart of Chornobyl", prix: "80", pricebare: "89.99", image: "./assets/images/stalker.webp" }
+        { id: "20", title: "S.T.A.L.K.E.R. 2 : Heart of Chornobyl", prix: "80", pricebare: "89.99", image: "./assets/images/stalker.webp" },
+        { id: "21", title: "Laurent le Gardien de la Galaxie", prix: "68", pricebare: "100", image: "./assets/images/laurent.jpg" },
+        { id: "22", title: "Volt : Star Malgré Lui", prix: "1", pricebare: "8", image: "./assets/images/volt.webp" }
       ];
     
       const categoryElements = categoryInits.map((category) => (
@@ -44,9 +47,11 @@ export default class HomeScreen extends Component {
     return (
         <>
       <Navbar />
+      <div className='color'>
       <Background />
-      <hr />
-      <div className='container row'>{categoryElements}</div>
+      <hr className='d-none d-md-block'/>
+      <div className='container row cardperso'>{categoryElements}</div>
+      </div>
       </>
     )
   }

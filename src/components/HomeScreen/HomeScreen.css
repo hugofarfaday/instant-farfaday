@@ -1,0 +1,11 @@
+
+@media all and (min-width: 1250px) and (max-width: 1920px){
+.cardperso{
+    position: relative;
+    left: 6rem;
+}
+}
+
+.color{
+    background-color: rgb(39, 39, 39);
+}

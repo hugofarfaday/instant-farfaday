@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import HomeScreen from './components/HomeScreen/HomeScreen';
 import { Route, Routes } from 'react-router-dom';
+import Connexion from './components/Connexion/Connexion';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
 
     <Routes>
         <Route path="/" element= {<HomeScreen />} />
+        <Route path="/Connexion" element= {<Connexion />} />
       </Routes>
     </>
   );

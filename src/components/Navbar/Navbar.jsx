@@ -16,6 +16,9 @@ export default class Navbar extends Component {
         <li className="nav-item">
          <Link to="/">Accueil</Link>
         </li>
+        <li className="nav-item mx-5">
+         <Link to="/Connexion">Connexion/ S'incrire</Link>
+        </li>
       </ul>
     </div>
   </div>
