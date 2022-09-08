@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+import "./Navbar.css";
 
 export default class Navbar extends Component {
   render() {
@@ -13,11 +14,11 @@ export default class Navbar extends Component {
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
-        <li className="nav-item">
+        <li className="nav-item d-flex mt-1">
          <Link to="/">Accueil</Link>
         </li>
-        <li className="nav-item mx-5">
-         <Link to="/Connexion">Connexion/ S'incrire</Link>
+        <li className="nav-item d-flex">
+         <Link to="/Connexion" className='link2'><img src='./assets/images/avatar.jpg' className='rounded-circle w mx-2'/>Connexion/ S'incrire</Link>
         </li>
       </ul>
     </div>
