@@ -1,38 +1,39 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Col from '../Col/Col';
+import "./Card.css";
 
-export default class Card extends Component {
-  render() {
-    return (
-        <>
-        <div className='row'>
-        <div className='card bg-light border-dark' style={{width: '18rem'}}>
-    <img src='https://www.residentevil.com/village/ge/assets/images/common/share-gl.png' class="card-img-top" alt="..." />
-    <div className='card-body'>
-      <h3 className='card-text'>Resident Evil Village</h3>
-      <p>18.56$</p>
-      <a href="#" class="btn btn-dark">Acheter</a>
-    </div>
-  </div>
-  <div className='card bg-light border-dark' style={{width: '18rem'}}>
-    <img src='https://cdn.akamai.steamstatic.com/steam/apps/1583230/capsule_616x353.jpg?t=1661277736' class="card-img-top" alt="..." />
-    <div className='card-body'>
-      <h3 className='card-text'>High On Life</h3>
-      <p>59.99$</p>
-      <a href="#" class="btn btn-dark">Acheter</a>
-    </div>
-  </div>
-  <div className='card bg-light border-dark' style={{width: '18rem'}}>
-    <img src='https://bnetcmsus-a.akamaihd.net/cms/blog_header/ck/CKVBTJLOOMIU1656284468947.png' class="card-img-top" alt="..." />
-    <div className='card-body'>
-      <h3 className='card-text'>Overwatch 2 : Edition Collector</h3>
-      <p>69.99$</p>
-      <a href="#" class="btn btn-dark">Acheter</a>
-    </div>
-  </div>
-  </div>
-  </>
-    )
-  }
+function Card({ favoris, image, prix, pricebare, description, title }) {
+  return (
+    <>
+      <div className="section-products">
+        <div id="product-1" className="single-product">
+          <div className="part-1">
+            <img className="test" src={image} alt="" />
+            <ul>
+              <li>
+                <a href="#">
+                  <i className="fas fa-heart"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fas fa-plus"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fas fa-expand"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="part-2">
+            <h3 className="product-title">{title}</h3>
+            <h4 className="product-old-price">${pricebare}</h4>
+            <h4 className="product-price">{prix},00€</h4>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
+
+export default Card;

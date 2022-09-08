@@ -1,0 +1,6 @@
+.image {
+    background-image: url(./promo.jpg);
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 100% 70%, 64% 86%, 30% 95%, 0 100%, 0% 30%);
+    height: 40rem;
+    width: 92.5rem;
+}
