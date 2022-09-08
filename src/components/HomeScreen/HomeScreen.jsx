@@ -45,6 +45,7 @@ export default class HomeScreen extends Component {
         <>
       <Navbar />
       <Background />
+      <hr />
       <div className='container row'>{categoryElements}</div>
       </>
     )

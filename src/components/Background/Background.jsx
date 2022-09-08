@@ -4,7 +4,6 @@ function Background() {
   return (
     <>
       <div className="image">
-
       </div>
     </>
   );
