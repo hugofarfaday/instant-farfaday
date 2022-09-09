@@ -1,12 +1,38 @@
 import "./Card.css";
+import HoverVideoPlayer from 'react-hover-video-player';
+import { useEffect } from "react";
+import { useRef } from "react";
 
-function Card({ favoris, image, prix, pricebare, description, title }) {
+function Card({ favoris, image, prix, video, pricebare, description, title }) {
+
   return (
     <>
       <div className="section-products">
         <div id="product-1" className="single-product">
           <div className="part-1">
-            <img className="test" src={image} alt="" />
+            {/* <img className="test" src={image} alt="" /> */}
+            < HoverVideoPlayer 
+      videoSrc={video} 
+      pausedOverlay={
+        <img
+          src={image}
+          alt=""
+          className="test"
+          style={{
+          
+            width: '100%',
+             height: '100%',
+            objectFit: 'cover',
+            
+           }}
+        />
+      }
+      loadingOverlay={
+        <div className="loading-overlay">
+          <div className="loading-spinner" />
+        </div>
+      }
+    />
             <ul>
               <li>
                 <a href="#">
