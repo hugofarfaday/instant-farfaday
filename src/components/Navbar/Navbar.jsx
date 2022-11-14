@@ -1,29 +1,49 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.js'
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
+import { AuthContext } from '../../contexts/AuthContext';
+import { useContext } from "react";
+import { deleteCookie } from '../../helpers/cookieHelper';
+import AccountScreen from '../Account/AccountScreen';
 
-export default class Navbar extends Component {
-  render() {
+  function Navbar() {
+
+    const { auth, setAuth } = useContext(AuthContext);
+
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div className="container-fluid">
-    <a className="navbar-brand"><img src='./assets/images/instantfarfaday.png' style={{width: '8rem'}}/></a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
+      <>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img src='./assets/images/instantfarfaday.png' style={{width: '8rem'}}/>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item d-flex mt-1">
-         <Link to="/">Accueil</Link>
-        </li>
-        <li className="nav-item d-flex">
-         <Link to="/Connexion" className='link2'><img src='./assets/images/avatar.jpg' className='rounded-circle w mx-2'/>Connexion/ S'incrire</Link>
-        </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <Link to='/'>Accueil</Link>
+          {auth.role === 0 &&
+          <Link to='/login' className='link2'>Se Connecter</Link>}
+            {auth.role === 1 && 
+              <Link to="/admin" className="btn btn-sm btn-primary me-2">Admin</Link>}
+            {auth.role > 0 && 
+              <Link to="/logged" className="btn btn-sm btn-primary me-2">Se déconnecter</Link>}
+            {auth.role > 0 && 
+              <Link to="/account" className="btn btn-sm btn-primary me-2">Mon compte</Link>}
+            {auth.role > 0 && 
+            <button className="btn btn-sm btn-secondary" 
+                onClick={e => {
+                    setAuth({role:0, id:0});
+                    deleteCookie("blog");
+                    window.location.href = "/login";
+                  }
+                }>Se déconnecter</button>}
       </ul>
     </div>
   </div>
 </nav>
+</>
     )
-  }
-}
+              }
+export default Navbar;

@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from '../Card/Card';
 import Background from '../Background/Background';
 import "./HomeScreen.css";
+import Pagination from 'react-js-pagination';
 
 export default class HomeScreen extends Component {
   render() {

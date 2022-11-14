@@ -1,8 +1,20 @@
-.w{
-    width: 30px;
+@media screen and (min-width: 1280px){
+    .link2{
+        position: relative;
+        left: 60rem;
+    }
+    .w{
+        width: 2rem;
+        position: relative;
+        right: 10px;
+    }
 }
 
-.link2{
-    position: relative;
-    left: 60rem;
+@media screen and (max-width: 1280px){
+    .w{
+        width: 2rem;
+        position: relative;
+        right: 7px;
+    }
 }
+
